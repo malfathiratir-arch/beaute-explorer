@@ -1,152 +1,52 @@
-# 💄 Beauté Explorer
+Beauté Explorer
 
-> A modern makeup catalog app built with React + Vite — perfect for your portfolio.
+Aplikasi katalog makeup modern yang dibangun dengan React + Vite, cocok untuk portfolio.
 
-![React](https://img.shields.io/badge/React-18-61dafb?logo=react) ![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite) ![CSS Modules](https://img.shields.io/badge/CSS-Modules-blue)
+Fitur
+Katalog Produk
+Menampilkan data produk nyata dari Makeup API
+Grid responsif dengan efek hover halus
+Gambar dimuat secara lazy-loading
+Preview warna langsung pada kartu produk
+Pencarian dan Filter
+Pencarian langsung berdasarkan nama, brand, atau deskripsi
+Filter brand: Maybelline, L'Oréal, NYX, Revlon, dan lainnya
+Filter kategori: Lipstick, Foundation, Eyeshadow, Blush, dll.
+Slider harga maksimum
+Opsi pengurutan: Featured, Harga naik/turun, Top Rated, A→Z
+Detail Produk
+Modal layar penuh dengan gambar, deskripsi, dan rating
+Pilihan warna interaktif dengan nama shade
+Tautan langsung ke situs brand
+Bisa ditutup dengan tombol Escape
+Wishlist
+Menyimpan produk favorit dengan tombol hati
+Wishlist tersimpan di localStorage
+Counter wishlist ditampilkan di header
+Performa dan UX
+Skeleton loading saat mengambil data
+Pagination (24 produk per halaman)
+Penanganan error dengan opsi coba ulang
+Scroll ke atas saat mengganti halaman
 
----
-
-## ✨ Features
-
-### 🛍️ Product Catalog
-- Fetches real data from [Makeup API](http://makeup-api.herokuapp.com)
-- Responsive card grid with elegant hover animations
-- Image lazy loading with emoji fallbacks
-- Color swatch previews directly on cards
-
-### 🔍 Filter & Search
-- **Live search** — filter by name, brand, or description
-- **Brand filter** — Maybelline, L'Oréal, NYX, Revlon & more
-- **Category chips** — Lipstick, Foundation, Eyeshadow, Blush, etc.
-- **Price slider** — max price filter ($5–$100)
-- **Sort options** — Featured, Price ↑↓, Top Rated, A→Z
-
-### 💬 Product Detail Modal
-- Full-screen modal with image, description, and rating
-- Interactive color swatches with shade names
-- Tags and product metadata
-- Direct link to purchase / brand website
-- Keyboard accessible (Escape to close)
-
-### 🩷 Wishlist
-- Like/save products with the heart button
-- Persisted to `localStorage` (survives page refresh)
-- Wishlist counter shown in header
-
-### ⚡ Performance & UX
-- Loading skeleton cards during API fetch
-- Pagination (24 products per page)
-- Error handling with retry option
-- Abort controller for cancelled requests
-- Scroll to top on page change
-
----
-
-## 🗂️ Project Structure
-
-```
 src/
 ├── components/
-│   ├── Header.jsx / .module.css       # Sticky header with search
-│   ├── Hero.jsx / .module.css         # Hero banner with marquee
-│   ├── FilterBar.jsx / .module.css    # Filters, sort, category chips
-│   ├── ProductCard.jsx / .module.css  # Individual product card
-│   ├── ProductModal.jsx / .module.css # Full-screen detail modal
-│   ├── SkeletonCard.jsx / .module.css # Loading placeholder
-│   ├── Pagination.jsx / .module.css   # Page navigation
-│   ├── EmptyState.jsx / .module.css   # No results / error screen
-│   ├── StarRating.jsx                 # Reusable star rating
-│   └── Footer.jsx / .module.css       # Footer
+│   ├── Header.jsx / .module.css
+│   ├── Hero.jsx / .module.css
+│   ├── FilterBar.jsx / .module.css
+│   ├── ProductCard.jsx / .module.css
+│   ├── ProductModal.jsx / .module.css
+│   ├── SkeletonCard.jsx / .module.css
+│   ├── Pagination.jsx / .module.css
+│   ├── EmptyState.jsx / .module.css
+│   ├── StarRating.jsx
+│   └── Footer.jsx / .module.css
 ├── hooks/
-│   ├── useProducts.js  # API fetch, filter, sort, paginate
-│   └── useWishlist.js  # Wishlist state + localStorage
+│   ├── useProducts.js
+│   └── useWishlist.js
 ├── utils/
-│   ├── constants.js    # BRANDS, CATEGORIES, config
-│   └── helpers.js      # formatPrice, truncate, sort, filter
-├── App.jsx             # Root component
-├── main.jsx            # Entry point
-└── index.css           # Global styles + CSS variables
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js ≥ 18
-- npm or yarn
-
-### Install & Run
-
-```bash
-# Clone or download the project
-cd beaute-explorer
-
-# Install dependencies
-npm install
-
-# Start dev server
-npm run dev
-
-# Open in browser
-# http://localhost:5173
-```
-
-### Build for Production
-
-```bash
-npm run build
-npm run preview
-```
-
----
-
-## 🎨 Design System
-
-| Token | Value |
-|-------|-------|
-| `--font-display` | Cormorant Garamond (elegant serif) |
-| `--font-body` | DM Sans (clean sans-serif) |
-| `--petal` | `#D4556E` (primary accent) |
-| `--blush` | `#F0A0BB` (mid tone) |
-| `--rose` | `#F8C8D4` (soft background) |
-| `--cream` | `#FFFAF7` (base background) |
-
----
-
-## 🧩 Key Technical Concepts
-
-- **Custom Hooks** — `useProducts` separates all data logic from UI
-- **CSS Modules** — scoped styles, zero conflicts
-- **AbortController** — cancels in-flight fetch on filter change
-- **useMemo/useCallback** — prevents unnecessary re-renders
-- **localStorage** — persists wishlist across sessions
-- **Responsive Grid** — CSS `auto-fill` + media queries
-
----
-
-## 📦 Dependencies
-
-| Package | Purpose |
-|---------|---------|
-| `react` | UI framework |
-| `react-dom` | DOM rendering |
-| `vite` | Build tool & dev server |
-| `@vitejs/plugin-react` | React Fast Refresh |
-
-> No UI libraries used — all components are hand-crafted.
-
----
-
-## 🌐 API Reference
-
-**Base URL:** `https://makeup-api.herokuapp.com/api/v1/products.json`
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `brand` | string | Filter by brand name |
-| `product_type` | string | Filter by category |
-
----
-
-*Made with 🌸 as a portfolio project.*
+│   ├── constants.js
+│   └── helpers.js
+├── App.jsx
+├── main.jsx
+└── index.css  
