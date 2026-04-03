@@ -1,0 +1,61 @@
+.footer {
+  margin-top: 64px;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+
+.inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 40px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.logoMark {
+  font-size: 18px;
+  color: var(--petal);
+}
+
+.logoName {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-deep);
+  letter-spacing: -0.3px;
+}
+
+.copy {
+  font-size: 13px;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+.link {
+  color: var(--petal);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rose);
+  transition: color 0.15s;
+}
+
+.link:hover {
+  color: var(--coral);
+}
+
+.note {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 300;
+  font-style: italic;
+  font-family: var(--font-display);
+}

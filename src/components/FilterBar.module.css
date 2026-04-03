@@ -1,0 +1,150 @@
+.wrap {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 20px 28px;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.selects {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.select {
+  appearance: none;
+  background: var(--rose-light);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 10px 36px 10px 16px;
+  font-size: 13px;
+  font-family: var(--font-body);
+  color: var(--text-deep);
+  cursor: pointer;
+  outline: none;
+  font-weight: 400;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-width: 148px;
+}
+
+.select:focus {
+  border-color: var(--blush);
+  box-shadow: 0 0 0 3px rgba(240, 160, 187, 0.15);
+}
+
+.select:hover {
+  border-color: var(--blush);
+}
+
+/* Price */
+.priceWrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.priceLabel {
+  font-size: 13px;
+  color: var(--text-light);
+  white-space: nowrap;
+  font-weight: 300;
+}
+
+.slider {
+  width: 130px;
+  accent-color: var(--petal);
+  cursor: pointer;
+  height: 4px;
+}
+
+/* Clear button */
+.clearBtn {
+  background: var(--rose-light);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-size: 12px;
+  font-family: var(--font-body);
+  color: var(--petal);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.clearBtn:hover {
+  background: var(--rose);
+  border-color: var(--blush);
+}
+
+/* Category chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--nude-light);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 7px 16px;
+  font-size: 12.5px;
+  font-family: var(--font-body);
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 400;
+}
+
+.chip:hover {
+  border-color: var(--blush);
+  color: var(--petal);
+  background: var(--rose-light);
+  transform: translateY(-1px);
+}
+
+.chipActive {
+  background: linear-gradient(135deg, var(--blush), var(--petal));
+  border-color: var(--petal);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(212, 85, 110, 0.28);
+  transform: translateY(-1px);
+}
+
+.chipActive:hover {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--blush), var(--coral));
+}
+
+.chipIcon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .inner { padding: 16px; }
+  .topRow { gap: 10px; }
+  .priceWrap { margin-left: 0; width: 100%; }
+  .slider { flex: 1; }
+}
